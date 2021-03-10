@@ -5,7 +5,9 @@
   "author": "Boulbeba bouaziz",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "pretest": "npm install",
+    "version": ""
   },
   "dependencies": {
     "axios": "^0.20.0",
