@@ -66,7 +66,7 @@ pipeline{
                     sh 'git add .'
                     sh 'git commit -m "change commit"'
                     sh 'npm version patch '
-                    sh "git push \"${REPO_URL}\""
+                    sh 'git push git@github.com:HammamiYassine/front_test.git'
                 }
                   
                 }
