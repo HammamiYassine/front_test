@@ -66,7 +66,8 @@ pipeline{
                     sh 'git add .'
                     sh 'git commit -m "change commit"'
                     sh 'npm version patch'
-                    sh 'git remote set-url origin https://HammamiYassine:24903952golf@github.com/front_test.git'
+                    sh 'git remote set-url origin git@github.com:HammamiYassine/front_test.git'
+                    sh 'git push -u origin master'
                 }  
                 }
     }
