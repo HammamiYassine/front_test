@@ -66,6 +66,8 @@ pipeline{
                     sh 'git add .'
                     sh 'git commit -m "change commit"'
                     sh 'npm version patch'
+                    sh 'git config credential.helper store'
+                    sh 'git push https://github.com/HammamiYassine/front_test.git'
                 }  
                 }
     }
