@@ -7,7 +7,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "pretest": "npm install",
-    "version": ""
+    "version": "",
+    "sonar-scanner": "node_modules/sonar-scanner/bin/sonar-scanner"
   },
   "dependencies": {
     "axios": "^0.20.0",
