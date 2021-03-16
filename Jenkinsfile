@@ -30,10 +30,11 @@ pipeline{
         }
         stage ('SonarQube analysis'){
             steps {
+                script {
             withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonar') {
             sh 'npm install sonar-scanner'
             sh 'npm run sonar'
-                
+            }   
             }
         }
         }
