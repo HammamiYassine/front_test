@@ -33,7 +33,7 @@ pipeline{
                 script {
             withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonar') {
             sh 'npm install sonar-scanner'
-            sh 'npm run sonar'
+            sh 'npm run sonar-scanner'
             }   
             }
         }
