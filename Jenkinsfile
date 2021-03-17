@@ -7,7 +7,7 @@ pipeline{
         REPO_URL= 'https://github.com/HammamiYassine/front_test.git'
         NEXUS_VERSION= "3"
         NEXUS_PROTOCOL="http"
-        NEXUS_URL="http://192.168.0.106:8082/"
+        NEXUS_URL="http:// 192.168.1.2:8082/"
         NEXUS_REPOSITORY="front"
         NEXUS_CREDENTIALS_ID="nexus"
     }
@@ -74,7 +74,7 @@ pipeline{
                        ],
                credentialsId: 'nexus',
                groupId: 'fr.Forum',
-               nexusUrl: '192.168.0.106:8082/',
+               nexusUrl: ' 192.168.1.2:8082/',
                nexusVersion: 'nexus3',
                protocol: 'http',
                repository: 'front',
