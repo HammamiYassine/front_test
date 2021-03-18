@@ -25,32 +25,16 @@ pipeline{
         }   
          stage('Build') {
             steps {
-             sh 'npm run build'
+            sh 'npm update'    
+            sh 'npm install'    
+            sh 'npm install --save-dev webpack'
+            sh 'npm install --save-dev mini-css-extract-plugin'
+            sh'node node_modules/node-sass/scripts/install.js'
+            sh'npm rebuild node-sass'
+            sh 'npm run build'
             }
         }
-        stage ('SonarQube analysis'){
-            steps {
-                script {
-            def scannerHome = tool 'sonar-scanner'
-            withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonar') {
-            sh 'npm install sonar-scanner'
-            sh 'npm run sonar-scanner'
-            }   
-            }
-        }
-        }
-        stage ('Quality gate') {
-            steps {
-                script {
-           timeout(time: 1, unit: 'HOURS') { 
-           def qg = waitForQualityGate() 
-           if (qg.status != 'OK') {
-             error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                                  }
-                                            }
-                }
-            }
-        }
+        
         
         stage('zip artifact') {
             steps{
