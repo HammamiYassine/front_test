@@ -66,18 +66,11 @@ pipeline{
                  }
              }
         }
-        stage('Increment Version') {
-            steps {
-                script {
-                    sh 'git config --global user.email "yassine_hammamii@yahoo.com"'
-                    sh 'git config --global user.name "HammamiYassine"'
-                    sh 'git add .'
-                    sh 'git commit -m "change commit"'
-                    sh 'npm version patch'
-                    sh 'git remote set-url origin git@github.com:HammamiYassine/front_test.git'
-                    sh 'git push -u origin master'
-                }  
-                }
+        stage ('deploy'){
+        steps {
+        sh'''docker-compose down
+        docker-compose up -d'''
+        }
+        }
     }
-}
 }
