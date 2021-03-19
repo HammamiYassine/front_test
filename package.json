@@ -18,6 +18,7 @@
     "moment": "^2.29.1",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
+    "sonar-scanner": "^3.1.0",
     "vue": "^2.6.11",
     "vue-moment": "^4.1.0",
     "vue-router": "^3.2.0",
