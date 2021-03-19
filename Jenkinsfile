@@ -34,38 +34,6 @@ pipeline{
             sh 'npm run build'
             }
         }
-        
-        
-        stage('zip artifact') {
-            steps{
-                script{
-                    zip archive: true, dir: 'dist', glob: '', zipFile: 'Ahmedd.zip',overwrite: true
-                }
-            }
-        }
-        stage ('pushing artifact to nexus'){
-             steps{
-                 script {
-                 def packageJSON = readJSON file: 'package.json'
-                 def packageJSONVersion = packageJSON.version
-               nexusArtifactUploader artifacts: [
-                   [
-                       artifactId: 'FrontServerSide',
-                       classifier: '',
-                       file: 'Ahmedd.zip',
-                       type: 'zip'
-                       ]
-                       ],
-               credentialsId: 'nexus',
-               groupId: 'fr.Forum',
-               nexusUrl: ' 192.168.0.106:8082/',
-               nexusVersion: 'nexus3',
-               protocol: 'http',
-               repository: 'front',
-               version: "${packageJSONVersion}"
-                 }
-             }
-        }
         stage ('deploy'){
         steps {
         sh'''docker-compose down
