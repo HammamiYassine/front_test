@@ -31,7 +31,8 @@ pipeline{
             sh'node node_modules/node-sass/scripts/install.js'
             sh'npm rebuild node-sass'
             sh 'npm run build'
-            }   
+            } 
+         }
         stage ('deploy'){
         steps {
         sh'''docker-compose down
