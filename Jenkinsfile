@@ -35,9 +35,8 @@ pipeline{
          }
         stage ('deploy'){
         steps {
-        sh'''docker-compose down
-        docker-compose build
-        docker-compose up -d'''
+        sh'''docker-compose down --rmi
+        docker-compose up --build -d'''
         }
         }
     }
