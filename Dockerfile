@@ -8,3 +8,4 @@ FROM nginx as production-stage
 RUN mkdir /app
 COPY --from=build-stage /app/dist /app
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-internal-server-error-conf/default.conf /etc/nginx/conf.d/default.conf
