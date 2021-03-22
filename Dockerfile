@@ -1,9 +1,4 @@
-FROM node:latest
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY ./ .
 FROM nginx:stable-alpine as production-stage
 RUN mkdir /app
-COPY --from=build-stage /app/dist /app
+COPY --from=dist /app
 COPY nginx.conf /etc/nginx/nginx.conf
