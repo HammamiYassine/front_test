@@ -23,17 +23,6 @@ pipeline{
              sh 'npm install'
             }
         }   
-         stage('Build') {
-            steps {
-            sh 'npm update'    
-            sh 'npm install'    
-            sh 'npm install --save-dev webpack'
-            sh 'npm install --save-dev mini-css-extract-plugin'
-            sh'node node_modules/node-sass/scripts/install.js'
-            sh'npm rebuild node-sass'
-            sh 'npm run build'
-            }
-        }
         stage ('deploy'){
         steps {
         sh'''docker-compose down
