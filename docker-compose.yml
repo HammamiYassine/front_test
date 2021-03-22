@@ -8,7 +8,7 @@ networks:
 services:  
   frontend:
     build : .
-    container_name: front-end 
+    container_name: front-endd 
     restart: always
     ports:
       - 8085:80
