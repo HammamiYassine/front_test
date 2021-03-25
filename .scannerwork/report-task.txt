@@ -1,6 +1,6 @@
 projectKey=tn.Forum:ForumServerSide
-serverUrl=http://192.168.0.106:9000
+serverUrl=http://192.168.1.2:9000
 serverVersion=8.7.0.41497
-dashboardUrl=http://192.168.0.106:9000/dashboard?id=tn.Forum%3AForumServerSide
-ceTaskId=AXhJzguPtvm5iaNMjvu4
-ceTaskUrl=http://192.168.0.106:9000/api/ce/task?id=AXhJzguPtvm5iaNMjvu4
+dashboardUrl=http://192.168.1.2:9000/dashboard?id=tn.Forum%3AForumServerSide
+ceTaskId=AXhphid0O0w_1PfpSj_C
+ceTaskUrl=http://192.168.1.2:9000/api/ce/task?id=AXhphid0O0w_1PfpSj_C
