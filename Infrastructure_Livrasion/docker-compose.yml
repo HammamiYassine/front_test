@@ -1,0 +1,16 @@
+version: "3.9"
+volumes:
+  my-volume:
+    external: true
+networks:
+  mt-network:
+    driver: bridge    
+services:  
+  frontend:
+    build : .
+    container_name: front-endd 
+    restart: always
+    ports:
+      - 8085:80
+    networks:
+      - mt-network
